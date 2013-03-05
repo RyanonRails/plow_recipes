@@ -14,6 +14,13 @@ else
   adduser --system --no-create-home --disabled-login --disabled-password --group nginx
 fi
 
+if test -e /etc/init/nginx.conf ; then
+  echo 'nginx upstart already installed'
+else
+  cp ~/plow/files/nginx.init.conf /etc/init/nginx.conf
+  restart nginx
+fi
+
 if test -d /opt/nginx/sites-available && test -d /opt/nginx/sites-enabled ; then
   echo 'sites-available and sites-enabled already installed'
 else
