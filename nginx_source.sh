@@ -17,7 +17,7 @@ fi
 if test -e /etc/init/nginx.conf ; then
   echo 'nginx upstart already installed'
 else
-  cp files/nginx.init.conf /etc/init/nginx.conf
+  cp ~/plow/files/nginx.init.conf /etc/init/nginx.conf
   restart nginx
 fi
 
