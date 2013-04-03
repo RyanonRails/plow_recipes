@@ -12,10 +12,10 @@ else
   
   case $RAILS_ENV in
   production)
-    echo 'export PS1="\033[1;41m$(date +%H:%M) (`whoami`) - `pwd` #\033[0m "' >> /home/$DEPLOY_USER_NAME/.bashrc
+    echo 'export PS1="\033[1;41m$(date +%H:%M) (\\u) \\w #\033[0m "' >> /home/$DEPLOY_USER_NAME/.bashrc
     ;;
   staging)
-    echo 'export PS1="\033[1;44m$(date +%H:%M) (`whoami`) - `pwd` #\033[0m "' >> /home/$DEPLOY_USER_NAME/.bashrc
+    echo 'export PS1="\033[1;44m$(date +%H:%M) (\\u) \\w #\033[0m "' >> /home/$DEPLOY_USER_NAME/.bashrc
     ;;
   esac
 fi
@@ -27,10 +27,10 @@ else
   
   case $RAILS_ENV in
   production)
-    echo 'export PS1="\033[1;41m$(date +%H:%M) (`whoami`) - `pwd` #\033[0m "' >> /home/$ROOT_USER_NAME/.bashrc
+    echo 'export PS1="\033[1;41m$(date +%H:%M) (\\u) \\w #\033[0m "' >> /home/$ROOT_USER_NAME/.bashrc
     ;;
   staging)
-    echo 'export PS1="\033[1;44m$(date +%H:%M) (`whoami`) - `pwd` #\033[0m "' >> /home/$ROOT_USER_NAME/.bashrc
+    echo 'export PS1="\033[1;44m$(date +%H:%M) (\\u) \\w #\033[0m "' >> /home/$ROOT_USER_NAME/.bashrc
     ;;
   esac
 fi
