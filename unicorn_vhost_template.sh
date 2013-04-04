@@ -5,17 +5,6 @@ upstream app_server {
 
 server {
   listen 80;
-  listen 443 ssl;
-  server_name $HOST_NAME;
-
-  ssl_certificate      /etc/ssl/$APP_NAME.crt;
-  ssl_certificate_key  /etc/ssl/$APP_NAME.key;
-    
-  rewrite ^(.*)$ \$scheme://www.$HOST_NAME\$1 permanent;
-}
-
-server {
-  listen 80;
   server_name www.$HOST_NAME $SUB_HOST_NAME;
 
   client_max_body_size 4G;
