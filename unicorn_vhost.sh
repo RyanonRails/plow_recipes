@@ -1,8 +1,8 @@
 # Install unicorn-friendly vhost
 #
 # $APP_NAME - app_name
-# $MY_AMA_CRT - ssl_cert
-# $MY_AMA_KEY - ssl_key
+# $SSL_CRT - ssl_cert
+# $SSL_KEY - ssl_key
 #
 # requires:
 #   nginx
@@ -13,11 +13,11 @@
   restart nginx
 
 
-if [[ -e /etc/ssl/$MY_AMA_CRT ]] && 
-  diff -q /etc/ssl/$MY_AMA_CRT ~/plow/files/$MY_AMA_CRT > /dev/null 2>&1; then
+if [[ -e /etc/ssl/$SSL_CRT ]] && 
+  diff -q /etc/ssl/$SSL_CRT ~/plow/files/$SSL_CRT > /dev/null 2>&1; then
   echo 'SSL cert already exists'
 else
-  cp ~/plow/files/$MY_AMA_CRT /etc/ssl/
-  cp ~/plow/files/$MY_AMA_KEY /etc/ssl/
+  cp ~/plow/files/$SSL_CRT /etc/ssl/
+  cp ~/plow/files/$SSL_KEY /etc/ssl/
   restart nginx
 fi
