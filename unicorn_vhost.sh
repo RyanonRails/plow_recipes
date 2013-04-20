@@ -8,7 +8,7 @@
 #   nginx
 
   rm -f /opt/nginx/sites-available/$APP_NAME
-  cp ~/plow/templates/unicorn_vhost /opt/nginx/sites-available/$APP_NAME
+  cp ~/plow/files/unicorn_vhost /opt/nginx/sites-available/$APP_NAME
   ln -sf /opt/nginx/sites-available/$APP_NAME /opt/nginx/sites-enabled/$APP_NAME
   restart nginx
 
