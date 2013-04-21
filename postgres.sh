@@ -9,7 +9,7 @@ if dpkg -s "postgresql-9.2"; then
 else
   add-apt-repository ppa:pitti/postgresql -y
   apt-get update
-  apt-get install -y postgresql-9.2 libpq-dev
+  apt-get install -y postgresql
 fi
 
  if psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1
