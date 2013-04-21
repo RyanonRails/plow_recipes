@@ -12,12 +12,12 @@ else
   apt-get install -y postgresql-9.2 libpq-dev
 fi
 
-# if psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1
-#   echo 'database user already exists'
-# else
+ if psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1
+   echo 'database user already exists'
+ else
    echo "CREATE USER $DB_USER_NAME WITH PASSWORD '$DB_PASSWORD';" | sudo -u postgres psql
    echo "CREATE DATABASE $DB_NAME OWNER $DB_USER_NAME;" | sudo -u postgres psql
-# fi
+ fi
 
 
 
