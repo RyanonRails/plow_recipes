@@ -7,7 +7,7 @@
 if dpkg -s "postgresql-9.2"; then
   echo 'postgresql-9.2 already installed'
 else
-  sudo apt-get install python-software-properties -y
+  apt-get install python-software-properties -y
   add-apt-repository ppa:pitti/postgresql -y
   apt-get update
   apt-get install -y postgresql
