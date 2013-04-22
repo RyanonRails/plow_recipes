@@ -10,7 +10,7 @@ else
   apt-get install python-software-properties -y
   add-apt-repository ppa:pitti/postgresql -y
   apt-get update
-  apt-get install -y postgresql
+  apt-get install -y postgresql-9.2 libpq-dev
 fi
 
  if psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1
