@@ -14,7 +14,7 @@ else
 fi
 
 
- if sudo -u postgres psql -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1
+ if sudo -u postgres psql -c "SELECT 1 FROM pg_roles WHERE rolname='$DB_USER_NAME'" | grep -q 1; then
    echo 'database user already exists'
  else
    echo "CREATE USER $DB_USER_NAME WITH PASSWORD '$DB_PASSWORD';" | sudo -u postgres psql
