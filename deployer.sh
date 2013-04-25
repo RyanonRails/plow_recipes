@@ -3,7 +3,7 @@
 # $DEPLOY_USER_NAME - deploy_user
 # $AUTHORIZED_KEYS - ssh_key_file_path
 
-useradd --create-home --shell /bin/bash --user-group --groups root $DEPLOY_USER_NAME
+useradd --create-home --shell /bin/bash --user-group --groups $ROOT_USER_GROUP $DEPLOY_USER_NAME
 
 if [[ -e /home/$DEPLOY_USER_NAME/.ssh/authorized_keys ]] &&
   diff -q /home/$DEPLOY_USER_NAME/.ssh/authorized_keys ~/plow/files/$AUTHORIZED_KEYS > /dev/null 2>&1; then
