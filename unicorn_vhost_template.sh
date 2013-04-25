@@ -52,8 +52,8 @@ server {
   server_name www.$HOST_NAME $SUB_HOST_NAME;
   ssl on;
 
-  ssl_certificate      /etc/ssl/$APP_NAME.crt;
-  ssl_certificate_key  /etc/ssl/$APP_NAME.key;
+  ssl_certificate      /etc/ssl/$SSL_CRT;
+  ssl_certificate_key  /etc/ssl/$SSL_KEY;
 
   client_max_body_size 4G;
 
